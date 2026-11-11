@@ -1,0 +1,22 @@
+{
+  "name": "finn-server",
+  "version": "1.0.0",
+  "description": "Finn, a Yorkshire terrier who builds his own pixel-art world with Claude, live on the web.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "mock": "MOCK_CLAUDE=1 node src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.60.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "pngjs": "^7.0.0",
+    "ws": "^8.18.0"
+  },
+  "license": "MIT"
+}

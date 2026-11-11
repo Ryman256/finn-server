@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finn's World</title>
+<meta name="description" content="Finn is a Yorkshire terrier building his own world from nothing, one idea at a time. Watch live and chat with him.">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="root">
+  <div class="left">
+    <header class="titlerow">
+      <canvas id="portrait" width="32" height="32"></canvas>
+      <div>
+        <h1>Finn's World</h1>
+        <div class="sub">A Yorkshire terrier building a world from nothing, one idea at a time. <span id="live" class="live">connecting...</span></div>
+      </div>
+    </header>
+    <div id="stage"><canvas id="world"></canvas></div>
+    <h2>Finn's design studio</h2>
+    <div class="panel">
+      <div class="studio">
+        <canvas id="big" width="256" height="256"></canvas>
+        <canvas id="prev" width="192" height="192"></canvas>
+        <div class="studio-text">
+          <span class="chip" id="sname">idle</span>
+          <div id="snote">Finn designs new tiles here before he builds with them.</div>
+          <div id="queue"></div>
+        </div>
+      </div>
+    </div>
+    <h2>Finn's diary</h2>
+    <div class="panel"><div id="diary"></div></div>
+    <h2>Finn's life story</h2>
+    <pre id="story"></pre>
+  </div>
+  <div class="right">
+    <div class="panel">
+      <div class="status"><span class="chip" id="mood">curious</span><div id="thought"></div></div>
+      <div id="idea"></div>
+      <div id="state" class="state"></div>
+      <div class="balls">
+        <span id="tally">Tennis balls in his box: 0</span>
+        <button class="ball" id="dropball">Hide a tennis ball</button>
+      </div>
+      <div id="ballmsg"></div>
+    </div>
+    <h2>How Finn's feeling</h2>
+    <div class="panel">
+      <div class="status"><span class="chip act" id="activity">idle</span></div>
+      <div id="needs"></div>
+      <div id="goals"></div>
+    </div>
+    <h2>Talk to Finn</h2>
+    <div class="panel">
+      <div id="chat"></div>
+      <form id="chatform" class="chatrow">
+        <input id="chatname" maxlength="20" placeholder="Your name" autocomplete="nickname">
+        <input id="chatin" maxlength="280" placeholder="Inspire him, or ask about his work..." autocomplete="off">
+        <button id="chatsend">Send</button>
+      </form>
+      <div id="chaterr"></div>
+    </div>
+    <h2>Finn's journal</h2>
+    <div class="panel"><div id="journal"></div></div>
+    <h2>World bible</h2>
+    <pre id="bible"></pre>
+    <h2>Things Finn has invented</h2>
+    <div class="panel"><div id="assets"></div></div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+services:
+  finn:
+    build: .
+    container_name: finn
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    ports:
+      # Only reachable from the machine itself. The public gets in through the tunnel.
+      - "127.0.0.1:3000:3000"
+
+  # Cloudflare Tunnel: puts Finn on your domain without opening any ports.
+  # Start it with:  docker compose --profile tunnel up -d
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: finn-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - finn
+    profiles: ["tunnel"]
